@@ -28,7 +28,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   set(icu_libraries icudata icui18n icuio icule iculx icutest icutu icuuc)
   set(linux_libraries ${icu_libraries} pthread uuid xml2)
 
-  link_directories(/opt/openssl/lib)
   link_directories(Vendor/mailcore2/build/src)
   include_directories(Vendor/mailcore2/build/src/include)
 
@@ -91,7 +90,8 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   find_library(ICUDATA_LIB NAMES libicudata.a libicudata)
   target_link_libraries(mailsync ${ICUDATA_LIB})
 
-  target_link_libraries(mailsync /tmp/mailsync-build-deps-v2/curl-7.70.0/lib/.libs/libcurl.a)    
+  find_library(CURL_LIB NAMES libcurl.a libcurl)
+  target_link_libraries(mailsync ${CURL_LIB})
 
   find_library(C_ARES_LIB NAMES libcares.a libcares)
   target_link_libraries(mailsync ${C_ARES_LIB})
@@ -99,10 +99,10 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   #find_library(SASL2_LIB NAMES libsasl2.a libsasl2)
   #target_link_libraries(mailsync ${SASL2_LIB})
 
-  find_library(SSL_LIB NAMES libssl.a libssl PATHS /opt/openssl/lib NO_DEFAULT_PATH)
+  find_library(SSL_LIB NAMES libssl.a libssl)
   target_link_libraries(mailsync ${SSL_LIB})
 
-  find_library(CRYPTO_LIB NAMES libcrypto.a libcrypto PATHS /opt/openssl/lib NO_DEFAULT_PATH)
+  find_library(CRYPTO_LIB NAMES libcrypto.a libcrypto)
   target_link_libraries(mailsync ${CRYPTO_LIB})
 
   #find_library(SASLEXTRA_LIB NAMES libgssapi.a libgssapi)
