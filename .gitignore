@@ -2,7 +2,7 @@
 *.xcuserstate
 *.xcbkptlist
 MailSync.xcodeproj/xcuserdata
-/build
+**/build
 /postinstall.sh
 /Windows/debug
 /Windows/release
