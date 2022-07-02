@@ -25,7 +25,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     /usr/include/curl
   )
   
-  set(icu_libraries icudata icui18n icuio icule iculx icutest icutu icuuc)
+  set(icu_libraries icudata icui18n icuio icutest icutu icuuc)
   set(linux_libraries ${icu_libraries} pthread uuid xml2)
 
   link_directories(Vendor/mailcore2/build/src)
