@@ -1,10 +1,10 @@
 cmake_minimum_required (VERSION 3.1 FATAL_ERROR)
 project (mailsync) 
 
-SET (CMAKE_C_COMPILER "/usr/bin/gcc-10")
+SET (CMAKE_C_COMPILER "/usr/bin/gcc-6")
 SET (CMAKE_C_FLAGS     "-std=c++1z")
 
-SET (CMAKE_CXX_COMPILER "/usr/bin/g++-10")
+SET (CMAKE_CXX_COMPILER "/usr/bin/g++-6")
 SET (CMAKE_CXX_FLAGS   "-std=c++1z -Wno-unknown-pragmas")
 
 #Set Linker flags
