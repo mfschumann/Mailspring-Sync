@@ -69,7 +69,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   find_library(Z_LIB NAMES libz.a libz)
   target_link_libraries(mailsync ${Z_LIB})
 
-  find_library(TIDY_LIB NAMES libtidy.a libtidy)
+  find_library(TIDY_LIB NAMES libtidy.a libtidys.a libtidy)
   target_link_libraries(mailsync ${TIDY_LIB})
 
   find_library(RESOLV_LIB NAMES libresolv.a libresolv)
