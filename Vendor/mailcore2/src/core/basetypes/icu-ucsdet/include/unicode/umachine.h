@@ -300,17 +300,7 @@ typedef int8_t UBool;
  *
  * @stable ICU 4.4
  */
-#if defined(UCHAR_TYPE)
-    typedef UCHAR_TYPE UChar;
-/* Not #elif U_HAVE_CHAR16_T -- because that is type-incompatible with pre-C++11 callers
-    typedef char16_t UChar;  */
-#elif U_SIZEOF_WCHAR_T==2
-    typedef wchar_t UChar;
-#elif defined(__CHAR16_TYPE__)
-    typedef __CHAR16_TYPE__ UChar;
-#else
-    typedef uint16_t UChar;
-#endif
+typedef char16_t UChar;
 
 /**
  * Define UChar32 as a type for single Unicode code points.

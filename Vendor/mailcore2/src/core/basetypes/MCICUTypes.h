@@ -10,12 +10,6 @@
 
 #define MAILCORE_MCICUTYPES_H
 
-#ifdef _MSC_VER
-typedef wchar_t UChar;
-#elif defined(__CHAR16_TYPE__)
-typedef __CHAR16_TYPE__ UChar;
-#else
-typedef uint16_t UChar;
-#endif
+typedef char16_t UChar;
 
 #endif
